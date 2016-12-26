@@ -1,0 +1,66 @@
+#include<iostream>
+using namespace std;
+class over
+{
+	float cur,rem;
+	int d,score;float r,b;
+	
+	public:
+		void getdata()
+		{ 
+			cout<<"Enter the current over\t";
+			cin>>cur;
+			cout<<"Enter the current score\t";
+			cin>>score;
+			cout<<"_______________________________________"<<endl;
+		}
+		
+		void no_of_balls()
+		{
+			int a=cur;float c;
+			d=a*6;c=(cur-(float)a)*10;b=d+c;
+		}
+		
+		void overs_remaining()
+		{
+			int a=300-b;d=a/6;float c=(a%6)*0.10;rem=d+c;
+		}
+		
+		void runrate()
+		{
+			float rc,r7,r8,r9,r10;float i=(300-b)/6;
+			int sc,s7,s8,s9,s10;
+			
+			r7=(i*7)+score;r8=(i*8)+score;
+			r9=(i*9)+score;r10=(i*10)+score;
+			rc=i*(((float)score/b)*6)+score;
+			
+			sc=rc;s7=r7;s8=r8;s9=r9;s10=r10;
+			
+			cout<<"\t"<<(((float)score/b)*6)<<"\t\t"<<sc<<endl;
+			cout<<"\t"<<"7"<<"\t\t"<<s7<<endl;
+			cout<<"\t"<<"8"<<"\t\t"<<s8<<endl;
+			cout<<"\t"<<"9"<<"\t\t"<<s9<<endl;
+			cout<<"\t"<<"10"<<"\t\t"<<s10<<endl;
+			cout<<"\n_______________________________________"<<endl;	
+		}
+		
+		void display()
+		{
+			cout<<"\n_______________________________________"<<endl;
+			cout<<"Overs:\t\t\t"<<cur<<endl<<"Balls bowled:\t\t"<<b<<endl;
+			cout<<"Balls remaining:\t"<<300-b<<endl;
+			cout<<"Overs remaining:\t"<<rem<<endl;
+			cout<<"Current Runrate:\t"<<((float)score/b)*6<<endl;
+			cout<<"_______________________________________"<<endl;
+			cout<<"\tRunrate\t\tScore(50 Overs)\n";			
+			cout<<"_______________________________________\n"<<endl;
+		}
+};
+int main()
+{
+	over o;
+	o.getdata();o.no_of_balls();o.overs_remaining();o.display();
+	o.runrate();
+	return 0;
+}
